@@ -89,7 +89,8 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             # insert your TEMPLATE_DIRS here
-            os.path.join(PROJECT_DIR, 'templates')
+            os.path.join(os.path.dirname(__file__), 'templates'),
+            # os.path.join(PROJECT_DIR, 'templates')
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -109,7 +110,8 @@ TEMPLATES = [
         },
     },
 ]
-
+import django.contrib.auth
+django.contrib.auth.LOGIN_URL = '/'
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -121,6 +123,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'haystack',
     'search_app',
+    'tutrainer',
 
 )
 

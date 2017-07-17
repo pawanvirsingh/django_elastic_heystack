@@ -3,7 +3,7 @@ from django.contrib import admin
 from search_app import settings
 import search_app.views
 admin.autodiscover()
-
+import tutrainer
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
 # admin.autodiscover()
@@ -19,4 +19,5 @@ urlpatterns = patterns('',
          {'document_root': settings.MEDIA_ROOT}),
 
     (r'^search/', include('haystack.urls')),
+    (r'^regi/', include('tutrainer.urls')),
 )
